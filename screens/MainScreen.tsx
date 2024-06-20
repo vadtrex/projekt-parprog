@@ -4,18 +4,11 @@ import {
   Text,
   StyleSheet,
   FlatList,
-  View,
-  TouchableOpacity,
   SafeAreaView,
   Platform,
   StatusBar,
-  Alert,
 } from "react-native";
-import Icon from "react-native-vector-icons/Octicons";
-import BottomSheet, {
-  BottomSheetFooter,
-  BottomSheetView,
-} from "@gorhom/bottom-sheet";
+import BottomSheet, {BottomSheetScrollView, BottomSheetView} from "@gorhom/bottom-sheet";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import DetailsComponent from "../components/DetailsComponent";
 import DoneComponent from "../components/DoneComponent";
@@ -46,74 +39,56 @@ const MainScreen = () => {
     {
       id: 3,
       title: "Sprzątanie mieszkania",
-      date: "06.06.2024",
+      date: "03.07.2024",
       description:
-        "Wysprzątać mieszkanie przed przyjazdem gości. Zwrócić uwagę na kuchnię i łazienkę.",
-      labels: ["Dom", "Ważne"],
+        "Wysprzątać mieszkanie przed przyjazdem gości.",
+      labels: ["Dom"],
       isDone: false,
     },
     {
       id: 4,
       title: "Spotkanie z klientem",
-      date: "06.06.2024",
+      date: "26.06.2024",
       description:
-        "Omówić szczegóły projektu z klientem. Przygotować wszystkie niezbędne dokumenty.",
+        "Omówić szczegóły projektu z współpracownikiem. Przygotować wszystkie niezbędne dokumenty.",
       labels: ["Spotkanie", "Praca"],
       isDone: false,
     },
     {
       id: 5,
       title: "Zakupy spożywcze",
-      date: "07.06.2024",
+      date: "27.06.2024",
       description:
-        "Kupić produkty na cały tydzień. Upewnić się, że lista zakupów zawiera wszystkie potrzebne artykuły.",
+        "Sprawdzić listę zakupów. Kupić wszystkie produkty z listy na cały tydzień.",
       labels: ["Dom"],
       isDone: false,
     },
     {
       id: 6,
       title: "Przygotowanie do egzaminu",
-      date: "08.06.2024",
+      date: "05.07.2024",
       description:
         "Przejrzeć notatki i zrobić powtórkę materiału przed egzaminem z matematyki.",
       labels: ["Studia", "Ważne"],
       isDone: false,
     },
     {
-      id: 7,
-      title: "Aktualizacja CV",
-      date: "09.06.2024",
-      description:
-        "Zaktualizować CV o najnowsze doświadczenia i umiejętności. Przygotować wersję do wysłania na nowe oferty pracy.",
-      labels: ["Praca"],
-      isDone: false,
-    },
-    {
       id: 8,
-      title: "Wizyta u dentysty",
-      date: "10.06.2024",
-      description:
-        "Regularna kontrola dentystyczna. Upewnić się, że wszystko jest w porządku i umówić się na następną wizytę.",
-      labels: ["Dom", "Ważne"],
-      isDone: false,
-    },
-    {
-      id: 9,
       title: "Pisanie pracy dyplomowej",
-      date: "11.06.2024",
+      date: "11.07.2024",
       description:
-        "Kontynuować pisanie pracy dyplomowej. Skupić się na rozdziale metodologicznym.",
+        "Napisać kolejne rozdziały pracy dyplomowej. Skupić się na rozdziale metodologicznym.",
       labels: ["Studia"],
       isDone: false,
     },
     {
-      id: 10,
+      id: 9,
       title: "Planowanie wakacji",
-      date: "12.06.2024",
+      date: "05.06.2024",
       description:
-        "Zaplanować szczegóły wakacyjnego wyjazdu. Zarezerwować bilety lotnicze i hotele.",
-      labels: ["Dom", "Spotkanie"],
-      isDone: false,
+        "Zaplanować szczegóły wakacyjnego wyjazdu. Kupić bilety lotnicze i zarezerwować hotele.",
+      labels: ["Dom"],
+      isDone: true,
     },
   ];
 

@@ -1,28 +1,25 @@
-const Stack = createNativeStackNavigator();
 import * as React from "react";
-import { NavigationContainer } from "@react-navigation/native";
 import MainScreen from "./screens/MainScreen";
-import { LogBox } from "react-native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { View, Text, Pressable, TouchableOpacity } from "react-native";
+import { StyleSheet, View, LogBox } from "react-native";
+import { StatusBar } from 'expo-status-bar';
 
 const App = () => {
-  const [hideSplashScreen, setHideSplashScreen] = React.useState(true);
   LogBox.ignoreAllLogs();
   return (
-    <>
-      <NavigationContainer>
-        {hideSplashScreen ? (
-          <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen
-              name="Zadania"
-              component={MainScreen}
-              options={{ headerShown: false }}
-            />
-          </Stack.Navigator>
-        ) : null}
-      </NavigationContainer>
-    </>
+    <View style={styles.container}>
+      <MainScreen />
+      <StatusBar style="light" />
+      </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#F2F2F2',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+
 export default App;
